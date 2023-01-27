@@ -16,4 +16,15 @@ public:
             return false;
         }
     }
+    static bool is_db_number_between(double number, double from, double to)
+    {
+        if (from<number && number<=to)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 };
