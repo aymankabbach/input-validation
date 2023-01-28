@@ -1,11 +1,12 @@
 #pragma once
 #include <iostream>
+#include <limits>
 using namespace std;
 
 class clsInputValidate
 {
 public:
-    static bool is_number_between(short number, short from, short to)
+    static bool is_number_between(int number,int from, int to)
     {
         if (from<number && number<=to)
         {
@@ -16,7 +17,7 @@ public:
             return false;
         }
     }
-    static bool is_db_number_between(double number, double from, double to)
+    static bool is_number_between(double number, double from, double to)
     {
         if (from<number && number<=to)
         {
@@ -26,5 +27,19 @@ public:
         {
             return false;
         }
+    }
+    static double ReadNumber(string message)
+    {
+        double number;
+        cout<<"enter a number"<<endl;
+        cin>>number;
+        while (cin.fail())
+        {
+        cin.clear();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        cout<<message<<endl;
+        cin>>number;
+        }
+        return number;
     }
 };
