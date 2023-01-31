@@ -42,4 +42,15 @@ public:
         }
         return number;
     }
+    static short read_short_number_between(short from, short to, string message)
+    {
+        short number;
+        cin>>number;
+        while (from>number || number>to)
+        {
+            cout<<message<<endl;
+            cin>>number;
+        }
+        return number;
+    }
 };
