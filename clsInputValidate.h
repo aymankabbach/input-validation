@@ -28,9 +28,9 @@ public:
             return false;
         }
     }
-    static double ReadNumber(string message)
+    template <typename T> static T ReadNumber(string message)
     {
-        double number;
+        T number;
         cout<<"enter a number"<<endl;
         cin>>number;
         while (cin.fail())
